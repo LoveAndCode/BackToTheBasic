@@ -27,9 +27,17 @@ public class ApplicationContextInfoTest {
 		for (String beanDefinitionName : beanDefinitionNames) {
 			BeanDefinition beanDefinition = applicationContext.getBeanDefinition(beanDefinitionName);
 
+			// ROLE_APPLICATION : 직접 등록한 애플리케이션 빈
 			if (beanDefinition.getRole() == BeanDefinition.ROLE_APPLICATION) {
 				Object bean = applicationContext.getBean(beanDefinitionName);
-				System.out.println("name = " + beanDefinitionName + " Object = " + bean);
+				System.out.println("[APPLICATION_BEAN] name = " + beanDefinitionName + " Object = " + bean);
+			}
+
+
+			// ROLE_INFRASTRUCTURE : 스프링 내부에서 사용하는 빈
+			if (beanDefinition.getRole() == BeanDefinition.ROLE_INFRASTRUCTURE) {
+				Object bean = applicationContext.getBean(beanDefinitionName);
+				System.out.println("[INFRASTRUCTURE_BEAN] name = " + beanDefinitionName + " Object = " + bean);
 			}
 		}
 	}
