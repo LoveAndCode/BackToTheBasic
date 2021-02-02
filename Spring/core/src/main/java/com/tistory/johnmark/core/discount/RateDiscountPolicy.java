@@ -1,8 +1,11 @@
 package com.tistory.johnmark.core.discount;
 
+import org.springframework.stereotype.Component;
+
 import com.tistory.johnmark.core.member.Grade;
 import com.tistory.johnmark.core.member.Member;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy {
 	private static final int DISCOUNT_PERCENT = 10;
 

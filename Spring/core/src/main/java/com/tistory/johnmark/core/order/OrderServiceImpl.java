@@ -1,13 +1,18 @@
 package com.tistory.johnmark.core.order;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.tistory.johnmark.core.discount.DiscountPolicy;
 import com.tistory.johnmark.core.member.Member;
 import com.tistory.johnmark.core.member.MemberRepository;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 	private final MemberRepository memberRepository;
 	private final DiscountPolicy discountPolicy;
 
+	@Autowired
 	public OrderServiceImpl(
 		MemberRepository memberRepository, DiscountPolicy discountPolicy
 	) {
