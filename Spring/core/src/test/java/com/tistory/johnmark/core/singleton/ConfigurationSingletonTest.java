@@ -40,6 +40,17 @@ public class ConfigurationSingletonTest {
 		assertThat(memberRepository1).isSameAs(memberRepository2).isSameAs(memberRepository);
 	}
 
+	/**
+	 * AppConfig@CGLIB 예상 코드
+	 * @Bean
+	 * public MemberRepository memberRepository(){
+	 *     if(memoryMemberRepository 가 이미 스프링 컨테이너에 있으면) {
+	 *         return 스프링 컨테이너에서 찾아서 반환
+	 *     }
+	 *     기존 로직을 호출해서 MemoryMemberRepository를 생성하고 스프링 컨테이너에 등록
+	 *     return 반환
+	 * }
+	 */
 	@Test
 	void configurationDeep() {
 		ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);

@@ -11,7 +11,7 @@ import com.tistory.johnmark.core.member.MemoryMemberRepository;
 import com.tistory.johnmark.core.order.OrderService;
 import com.tistory.johnmark.core.order.OrderServiceImpl;
 
-// @Configuration
+@Configuration
 public class AppConfig {
 
 	@Bean
