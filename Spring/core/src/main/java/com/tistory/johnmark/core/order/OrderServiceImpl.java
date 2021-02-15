@@ -6,7 +6,10 @@ import com.tistory.johnmark.core.discount.DiscountPolicy;
 import com.tistory.johnmark.core.member.Member;
 import com.tistory.johnmark.core.member.MemberRepository;
 
+import lombok.RequiredArgsConstructor;
+
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 	private final MemberRepository memberRepository;
 	private final DiscountPolicy discountPolicy;
@@ -16,14 +19,14 @@ public class OrderServiceImpl implements OrderService {
 	 * 인자있는 생성자가 한개만 선언되어있는 경우, @Autowired를 선언 안해도
 	 * 스프링에서는 자동으로 스프링 빈을 찾아서 주입을한다.
 	 */
-	public OrderServiceImpl(
-		MemberRepository memberRepository, DiscountPolicy discountPolicy
-	) {
-		System.out.println("memberRepository = " + memberRepository);
-		System.out.println("discountPolicy = " + discountPolicy);
-		this.memberRepository = memberRepository;
-		this.discountPolicy = discountPolicy;
-	}
+	// public OrderServiceImpl(
+	// 	MemberRepository memberRepository, DiscountPolicy discountPolicy
+	// ) {
+	// 	System.out.println("memberRepository = " + memberRepository);
+	// 	System.out.println("discountPolicy = " + discountPolicy);
+	// 	this.memberRepository = memberRepository;
+	// 	this.discountPolicy = discountPolicy;
+	// }
 
 	@Override
 	public Order createOrder(Long memberId, String itemName, int itemPrice) {

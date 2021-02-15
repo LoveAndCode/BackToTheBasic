@@ -1,16 +1,13 @@
 package com.tistory.johnmark.core.member;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
-public class MemberServiceImpl implements MemberService{
-	private final MemberRepository memberRepository;
+import lombok.RequiredArgsConstructor;
 
-	@Autowired
-	public MemberServiceImpl(MemberRepository memberRepository) {
-		this.memberRepository = memberRepository;
-	}
+@Component
+@RequiredArgsConstructor
+public class MemberServiceImpl implements MemberService {
+	private final MemberRepository memberRepository;
 
 	@Override
 	public void join(Member member) {
