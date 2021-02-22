@@ -9,7 +9,7 @@ import com.tistory.johnmark.core.member.Member;
 @Component
 @MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy {
-	private static final int DISCOUNT_PERCENT = 10;
+	private static final int DISCOUNT_PERCENT = 20;
 
 	@Override
 	public int discount(Member member, int price) {
