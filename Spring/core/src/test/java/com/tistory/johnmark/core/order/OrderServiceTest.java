@@ -26,6 +26,6 @@ public class OrderServiceTest {
 		//then
 		Assertions.assertThat(member.getId()).isEqualTo(memberId);
 		Assertions.assertThat(member.getGrade()).isEqualTo(Grade.VIP);
-		Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
+		Assertions.assertThat(order.getDiscountPrice()).isEqualTo(2000);
 	}
 }
