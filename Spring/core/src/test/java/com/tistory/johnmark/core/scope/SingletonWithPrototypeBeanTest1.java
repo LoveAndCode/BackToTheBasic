@@ -4,11 +4,10 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.*;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.inject.Provider;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
 
@@ -38,7 +37,6 @@ public class SingletonWithPrototypeBeanTest1 {
 		System.out.println("count1 = " + count1);
 		assertThat(count1).isEqualTo(1);
 
-
 		ClientBean clientBean2 = ac.getBean(ClientBean.class);
 		int count2 = clientBean2.logic();
 		System.out.println("count2 = " + count2);
@@ -50,10 +48,10 @@ public class SingletonWithPrototypeBeanTest1 {
 	static class ClientBean {
 
 		@Autowired
-		private ObjectProvider<PrototypeBean> prototypeBeanObjectProvider;
+		private Provider<PrototypeBean> prototypeBeanObjectProvider;
 
 		public int logic() {
-			PrototypeBean prototypeBean = prototypeBeanObjectProvider.getObject();
+			PrototypeBean prototypeBean = prototypeBeanObjectProvider.get();
 			prototypeBean.addCount();
 			return prototypeBean.getCount();
 		}
