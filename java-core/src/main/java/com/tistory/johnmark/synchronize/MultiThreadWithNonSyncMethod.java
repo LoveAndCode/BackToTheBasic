@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 public class MultiThreadWithNonSyncMethod {
 	public static void main(String[] args) throws InterruptedException {
 		ExecutorService service = Executors.newFixedThreadPool(3);
-		SynchronizedMethod summation = new SynchronizedMethod();
+		NotSynchronizedMethod summation = new NotSynchronizedMethod();
 
 		IntStream.range(0, 100).forEach(count -> service.submit(summation::calculate));
 		service.awaitTermination(1000, TimeUnit.MILLISECONDS);
