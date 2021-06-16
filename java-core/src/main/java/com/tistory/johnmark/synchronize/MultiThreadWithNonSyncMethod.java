@@ -1,4 +1,4 @@
-package synchornize;
+package com.tistory.johnmark.synchronize;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

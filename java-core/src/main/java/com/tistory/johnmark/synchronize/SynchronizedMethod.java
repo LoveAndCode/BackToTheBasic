@@ -1,4 +1,4 @@
-package synchornize;
+package com.tistory.johnmark.synchronize;
 
 public class SynchronizedMethod {
 	private int sum = 0;
