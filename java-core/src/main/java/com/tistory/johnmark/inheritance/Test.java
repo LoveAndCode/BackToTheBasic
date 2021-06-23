@@ -7,5 +7,13 @@ public class Test {
 		Parent parent = child;
 		parent.method1();
 		parent.method2();
+
+		System.out.println("==========================================");
+
+		Driver driver = new Driver();
+		Vehicle vehicle = new Vehicle();
+		driver.drive(vehicle);
+		Bus bus = new Bus();
+		driver.drive(bus);
 	}
 }
