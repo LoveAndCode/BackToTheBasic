@@ -1,9 +1,11 @@
 package com.tistory.johnmark.stream;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamTest2 {
 	public static void main(String[] args) {
@@ -47,18 +49,29 @@ public class StreamTest2 {
 
 		System.out.println("--------------------------------------------------------------");
 		System.out.println("두 수업 목록에 둘어있는 모든 수업 아이디 출력");
+		johnMarkEvents.stream()
+			.flatMap(Collection::stream)
+			.forEach(onlineClass -> System.out.println(onlineClass.getId()));
 		System.out.println("--------------------------------------------------------------");
 
 		System.out.println("--------------------------------------------------------------");
 		System.out.println("10부터 1씩 증가하는 무제한 스트림 중에 앞에 10개 빼고 최대 10개까지만");
+		Stream.iterate(10, i -> i + 1).skip(10).limit(10).forEach(System.out::println);
 		System.out.println("--------------------------------------------------------------");
 
 		System.out.println("--------------------------------------------------------------");
 		System.out.println("자바 수업 중에 Test가 들어있는 수업있는지 확인");
+		boolean test = springClasses.stream().anyMatch(oc -> oc.getTitle().contains("Test"));
+		System.out.println(test);
 		System.out.println("--------------------------------------------------------------");
 
 		System.out.println("--------------------------------------------------------------");
 		System.out.println("스프링 수업 중에 제목에 spring이 들어간 것만 모아서 List로 만들기");
+		List<String> spring = springClasses.stream()
+			.filter(oc -> oc.getTitle().contains("spring"))
+			.map(OnlineClass::getTitle)
+			.collect(Collectors.toList());
+		spring.forEach(System.out::println);
 		System.out.println("--------------------------------------------------------------");
 
 	}
