@@ -8,6 +8,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE_USE)
-@Repeatable()
+@Repeatable(ChickenContainer.class)
 public @interface Chicken2 {
+	String value();
 }

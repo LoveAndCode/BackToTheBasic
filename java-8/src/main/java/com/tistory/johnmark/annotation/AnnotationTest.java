@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AnnotationTest {
-	public static void main(@Chicken String[] args) throws @Chicken RuntimeException{
+	public static void main(@Chicken String[] args) throws @Chicken RuntimeException {
 		List<@Chicken String> names = Arrays.asList("JohnMark");
 	}
 

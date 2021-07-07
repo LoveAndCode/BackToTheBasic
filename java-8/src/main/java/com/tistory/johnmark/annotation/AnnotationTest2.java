@@ -1,20 +1,22 @@
 package com.tistory.johnmark.annotation;
 
-import java.util.Arrays;
-import java.util.List;
-
-@Chicken2
-@Chicken2
-@Chicken2
-@Chicken2
+@Chicken2("마늘 간장")
+@Chicken2("후라이드")
+@Chicken2("양념")
 public class AnnotationTest2 {
-	public static void main(@Chicken2 String[] args) throws @Chicken2 RuntimeException {
-		List<@Chicken2 String> names = Arrays.asList("JohnMark");
-	}
-
-	static class FeelsLikeChicken2<@Chicken2 T> {
-		public static <@Chicken2 C> void print(@Chicken2 C c) {
-
+	public static void main(String[] args) throws RuntimeException {
+		Chicken2[] chickens = AnnotationTest2.class.getAnnotationsByType(Chicken2.class);
+		for (Chicken2 chicken2 : chickens) {
+			System.out.println("chicken2 = " + chicken2);
 		}
+
+		System.out.println("-----------------------------------------------------");
+
+		// Get Annotation Value Via Container Annotation
+		ChickenContainer chickenContainer = AnnotationTest2.class.getAnnotation(ChickenContainer.class);
+		for (Chicken2 chicken2 : chickenContainer.value()) {
+			System.out.println("chicken2 = " + chicken2);
+		}
+
 	}
 }
