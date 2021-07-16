@@ -1,8 +1,8 @@
 package com.tistory.johnmark.array;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+	import java.util.ArrayList;
+	import java.util.Arrays;
+	import java.util.List;
 
 public class ArrayTest2 {
 	public static void main(String[] args) {
