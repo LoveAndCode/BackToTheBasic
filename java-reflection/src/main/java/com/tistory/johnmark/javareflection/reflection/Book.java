@@ -1,5 +1,8 @@
 package com.tistory.johnmark.javareflection.reflection;
 
+import com.tistory.johnmark.javareflection.reflection.annotation.MyAnnotation;
+
+@MyAnnotation("JoengHyeon")
 public class Book {
 	private static final String C = "Book";
 	private static String B = "Book";
@@ -9,6 +12,7 @@ public class Book {
 
 	public Book() {
 	}
+
 
 	public Book(String a) {
 		this.a = a;
