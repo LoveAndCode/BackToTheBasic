@@ -2,7 +2,7 @@ package com.tistory.johnmark.javaproxy;
 
 public class DefaultBookService implements BookService {
 
-	public void ren(Book book) {
+	public void rent(Book book) {
 		System.out.println("rent: " + book.getTitle());
 	}
 
