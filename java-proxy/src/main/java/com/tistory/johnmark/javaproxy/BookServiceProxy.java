@@ -14,4 +14,11 @@ public class BookServiceProxy implements BookService {
 		bookService.ren(book);
 		System.out.println("bbbbb");
 	}
+
+	@Override
+	public void returnBook(Book book) {
+		System.out.println("aaaaaaaa");
+		bookService.returnBook(book);
+		System.out.println("bbbbb");
+	}
 }
