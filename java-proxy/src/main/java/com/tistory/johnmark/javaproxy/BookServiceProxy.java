@@ -1,10 +1,10 @@
 package com.tistory.johnmark.javaproxy;
 
-public class BookServiceProxy implements BookService {
+public class BookServiceProxy implements IBookService {
 
-	BookService bookService;
+	IBookService bookService;
 
-	public BookServiceProxy(BookService bookService) {
+	public BookServiceProxy(IBookService bookService) {
 		this.bookService = bookService;
 	}
 

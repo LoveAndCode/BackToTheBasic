@@ -1,7 +1,12 @@
 package com.tistory.johnmark.javaproxy;
 
-public interface BookService {
-	void rent(Book book);
+public class BookService {
 
-	void returnBook(Book book);
+	public void rent(Book book) {
+		System.out.println("rent: " + book.getTitle());
+	}
+
+	public void returnBook(Book book) {
+		System.out.println("return: " + book.getTitle());
+	}
 }

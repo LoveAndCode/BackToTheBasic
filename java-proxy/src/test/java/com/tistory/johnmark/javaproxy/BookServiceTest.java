@@ -23,9 +23,10 @@ public class BookServiceTest {
 	// 		}
 	// 	}
 	// );
-	DefaultBookService bookService = (DefaultBookService)Proxy.newProxyInstance(DefaultBookService.class.getClassLoader(),
-		new Class[] {BookService.class}, new InvocationHandler() {
-			BookService bookService = new DefaultBookService();
+	BookService bookService = (BookService)Proxy.newProxyInstance(
+		BookService.class.getClassLoader(),
+		new Class[] {IBookService.class}, new InvocationHandler() {
+			BookService bookService = new BookService();
 
 			@Override
 			public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
